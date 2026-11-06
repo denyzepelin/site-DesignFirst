@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+  --font-script: "Lobster Two", cursive;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-cream: var(--cream);
+  --color-overlay: var(--overlay);
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: var(--radius);
+  --radius-xl: 0.75rem;
+}
+
+:root {
+  --radius: 999px;
+  --background: oklch(16% 0.01 40);
+  --foreground: oklch(97% 0.01 80);
+  --card: oklch(21% 0.012 40);
+  --card-foreground: oklch(97% 0.01 80);
+  --popover: oklch(21% 0.012 40);
+  --popover-foreground: oklch(97% 0.01 80);
+  --primary: oklch(42% 0.15 25);
+  --primary-foreground: oklch(97% 0.01 80);
+  --secondary: oklch(96% 0.015 80);
+  --secondary-foreground: oklch(42% 0.15 25);
+  --muted: oklch(25% 0.01 40);
+  --muted-foreground: oklch(75% 0.02 70);
+  --accent: oklch(42% 0.15 25);
+  --accent-foreground: oklch(97% 0.01 80);
+  --destructive: oklch(57.7% 0.245 27.325);
+  --destructive-foreground: oklch(98% 0 0);
+  --border: oklch(97% 0.01 80 / 0.25);
+  --input: oklch(97% 0.01 80 / 0.25);
+  --ring: oklch(42% 0.15 25);
+  --cream: oklch(96% 0.015 80);
+  --overlay: oklch(10% 0.01 40 / 0.55);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes logo-in {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.3em;
+    transform: scale(0.85);
+  }
+  40% {
+    opacity: 1;
+    letter-spacing: 0;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes bar-fill {
+  0% {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-logo-in {
+  animation: 2.4s ease-out forwards logo-in;
+}
+
+.animate-bar {
+  animation: 6s linear forwards bar-fill;
+}
